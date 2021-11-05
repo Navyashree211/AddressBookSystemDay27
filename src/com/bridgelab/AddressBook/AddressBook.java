@@ -1,15 +1,11 @@
 /*
- * UC-10: Ability to get number of contact by city or state.
+ * UC-11: Ability to sort the entries in the address book alphabetically by person's name .
  * 
  * @author : Navaya Shree
  * @since : 01-11-21
  */
 package com.bridgelab.AddressBook;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 public class AddressBook {
 	private List<ContactPerson> contacts;
