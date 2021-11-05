@@ -1,8 +1,8 @@
 /*
- * UC-12:  Ability to sort the entries in the address book  by City, State, or Zip .
+ * UC-13: Ability to Read or Write the AddressBook with Persons Contact into a File using File IO.
  * 
  * @author : Navaya Shree
- * @since : 01-11-21
+ * @since : 03-11-21
  */
 package com.bridgelab.AddressBook;
 
@@ -34,7 +34,8 @@ public class AddressBookSystem {
 		System.out.println("Enter your choice");
 		System.out.println(
 				"1 : Add new contact    2 : Edit contact  3 : Delete contact  4: Add Multiple Contacts 5: Display Contacts 6: Search Person 7: Person with City and State"
-						+ " 8: Count person by city and state 9: Sorted Person's by alphabetically in Address Book 10: Sorted Person's by alphabetically by City State And Zip Code");
+						+ " 8: Count person by city and state 9: Sorted Person's by alphabetically in Address Book 10: Sorted Person's by alphabetically by City State And Zip Code"
+						+ " 11: write the addressbook with persons contact into text file ");
 		int choice = sc.nextInt();
 		switch (choice) {
 		case 1:
@@ -152,7 +153,12 @@ public class AddressBookSystem {
 		case 10:
 			addressbooks.sortEntriesInAddressBookByCitySateAndZip();
 			addressbooks.addContacts();
-
+			break;
+		case 11:
+			FileHandling fileHandling = new FileHandling();
+			fileHandling.createFile();
+			fileHandling.writeContactToFile(addressBookSystem);
+			addressbooks.addContacts();
 			break;
 		default:
 			System.out.println("Please Enter correct choice");
@@ -400,6 +406,7 @@ public class AddressBookSystem {
 			sortedListZip.forEach(con -> System.out.println(con.getZip()));
 
 		}
+
 	}
 
 }
